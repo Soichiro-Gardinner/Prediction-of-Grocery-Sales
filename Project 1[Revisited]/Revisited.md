@@ -2,22 +2,25 @@
 
 ## Introduction
 
-In this project, we revisit the task of predicting supermarket sales using the updated tools in sklearn v1.2. We apply what we've learned to explain how our models make their predictions. The goal is to create a new version of our final project notebook, including explanations of the models, feature importances, and coefficients, as well as serializing the best models for future use.
+In this project, we revisit the task of predicting supermarket sales using the updated tools in sklearn v1.2. We apply what we've learned to explain how our models make their predictions. The goal is to create a new version of our final project notebook, including explanations of the models, feature importances, SHAP analysis, and coefficients, as well as serializing the best models for future use.
 
 ## Table of Contents
 
-1. [Installation](#installation)
-2. [Data](#data)
-3. [Data Preprocessing](#data-preprocessing)
-4. [Linear Regression](#linear-regression)
-   - [Coefficients](#coefficients)
-   - [Top 3 Most Impactful Features](#top-3-most-impactful-features)
-5. [Random Forest Regressor](#random-forest-regressor)
-   - [Feature Importances](#feature-importances)
-   - [Top 5 Most Important Features](#top-5-most-important-features)
-6. [Serialization](#serialization)
-   - [Best Models](#best-models)
-7. [Conclusion](#conclusion)
+1. Installation
+2. Data
+3. Data Preprocessing
+4. Linear Regression
+   - Coefficients
+   - Top 3 Most Impactful Features
+5. Random Forest Regressor
+   - Feature Importances
+   - Top 5 Most Important Features
+6. SHAP Analysis
+   - SHAP Summary Plot
+   - Interpretation of Top Features
+7. Serialization
+   - Best Models
+8. Conclusion
 
 ## Installation
 
@@ -26,7 +29,7 @@ To run the code and reproduce the results, you need to have the following librar
 - pandas
 - matplotlib
 - scikit-learn
-
+- shap
 
 ## Data
 
@@ -58,9 +61,17 @@ We fit the Random Forest Regressor using the preprocessed data and extract the f
 
 From the feature importances, we identify the top 5 most important features in our Random Forest Regressor and discuss their significance.
 
+## SHAP Analysis
+
+To gain deeper insights into our models, we use SHAP analysis to understand how each feature affects individual data points' predictions. We create a SHAP summary plot to visualize the impact of each feature on the model's predictions.
+
+### Interpretation of Top Features
+
+From the SHAP summary plot, we interpret the top features that have the highest impact on the model's predictions. We explain the direction of their impact (positive or negative) and how changes in these features influence the sales predictions.
+
 ## Serialization
 
-To ensure we can use our best models in future assignments or projects, we serialize and save them using the joblib library.
+To ensure we can use our best models and SHAP analysis in future assignments or projects, we serialize and save them using the joblib library.
 
 ### Best Models
 
@@ -74,8 +85,6 @@ The serialized models are saved in "best-models.joblib".
 
 ## Conclusion
 
-In this project, we revisited the task of predicting supermarket sales and applied various machine learning models. We explored the coefficients of the Linear Regression model and the feature importances of the Random Forest Regressor to gain insights into the model's predictions. The best models are serialized for future use.
+In this project, we revisited the task of predicting supermarket sales and applied various machine learning models. We explored the coefficients of the Linear Regression model, the feature importances of the Random Forest Regressor, and the SHAP values to gain insights into the models' predictions. The best models and SHAP analysis are serialized for future use.
 
 For more details, please refer to the Jupyter Notebook "Project 1 - Revisited.ipynb" in this repository.
-
-
