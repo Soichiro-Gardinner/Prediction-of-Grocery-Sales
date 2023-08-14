@@ -1,53 +1,82 @@
-# Sales Predictions Model Explanations
+# Prediction of Grocery Sales
 
-This repository contains code and examples for explaining predictions made by a sales predictions model. The explanations are generated using two different techniques: SHAP (SHapley Additive exPlanations) and LIME (Local Interpretable Model-agnostic Explanations).
+This project aims to predict grocery sales using machine learning techniques. It involves data preprocessing, model training, and local explanations using SHAP and LIME.
 
 ## Table of Contents
 
-- [Overview](#overview)
+- [Project Overview](#project-overview)
+- [Installation](#installation)
 - [Data](#data)
-- [Getting Started](#getting-started)
-- [Explanation Techniques](#explanation-techniques)
-- [Examples](#examples)
+- [Data Preprocessing](#data-preprocessing)
+- [Model Training](#model-training)
+- [Local Explanations](#local-explanations)
+- [Results](#results)
+- [Contributing](#contributing)
 - [License](#license)
 
-## Overview
+## Project Overview
 
-In this repository, we explore how to explain predictions made by a sales predictions model using SHAP and LIME. We use a random forest regressor model to predict sales based on various features. The goal is to provide local explanations for both high and low sales predictions.
+This project focuses on predicting grocery sales using a RandomForestRegressor model. It includes data preprocessing, model training, and local explanation techniques.
+# Prediction of Grocery Sales
+
+This repository contains a project focused on predicting grocery sales using machine learning techniques. The project involves data preprocessing, model training, and model interpretation using SHAP and LIME.
+
+
+## Example Images
+
+Here are the explanation plots generated using LIME and SHAP for high and low sales examples:
+
+### High Sales LIME Explanation
+![High Sales LIME Explanation](/Project%201%5BRevisited%5D/high_sales_lime_explanation.png)
+
+### High Sales SHAP Force Plot
+![High Sales SHAP Force Plot](/Project%201%5BRevisited%5D/high_sales_shap_force_plot.png)
+
+### Low Sales LIME Explanation
+![Low Sales LIME Explanation](/Project%201%5BRevisited%5D/low_sales_lime_explanation.png)
+
+### Low Sales SHAP Force Plot
+![Low Sales SHAP Force Plot](/Project%201%5BRevisited%5D/low_sales_shap_force_plot.png)
+
+## Installation
+
+1. Clone the repository:
+git clone https://github.com/yourusername/Prediction-of-Grocery-Sales.git
+cd Prediction-of-Grocery-Sales
+
+
+2. Install the required Python packages:
+pip install -r requirements.txt
+
 
 ## Data
 
-The data used for training and testing the model is the "Sales Predictions" dataset. This dataset includes various features related to products and outlets, as well as the target variable "Item_Outlet_Sales," which represents the predicted sales.
+The project utilizes the "sales_predictions.csv" dataset containing various features related to grocery items and their sales.
 
-## Getting Started
+## Data Preprocessing
 
-To run the code in this repository, follow these steps:
+The data preprocessing steps involve handling missing values, feature scaling, and one-hot encoding for categorical variables.
 
-1. Clone the repository to your local machine.
-2. Ensure you have the required dependencies installed. You can install them using `pip install -r requirements.txt`.
-3. Place the "sales_predictions.csv" file in the repository's root directory.
+## Model Training
 
-## Explanation Techniques
+A RandomForestRegressor model is trained to predict grocery sales based on the preprocessed features.
 
-We utilize two explanation techniques to understand our sales predictions model:
+## Local Explanations
 
-1. **SHAP (SHapley Additive exPlanations):** SHAP values provide insights into how individual features contribute to a prediction. We use the SHAP library to generate force plots for high and low sales predictions.
+The project employs SHAP and LIME for local explanations of model predictions. SHAP force plots and LIME explanations are generated for representative examples.
 
-2. **LIME (Local Interpretable Model-agnostic Explanations):** LIME creates locally faithful explanations for model predictions. We use the LimeTabularExplainer to explain single observations and visualize the contributions of each feature.
+## Results
 
-## Examples
+The generated SHAP force plots and LIME explanations provide insights into how specific features contribute to the model's predictions.
 
-We provide examples for both SHAP and LIME explanations:
+## Contributing
 
-- SHAP Examples: SHAP force plots are generated for both high and low sales predictions. These plots visualize how individual features impact the predictions.
-![SHAP Force Plot - High Sales](high_sales_shap_force_plot.png)
-![SHAP Force Plot - Low Sales](low_sales_shap_force_plot.png)
-
-- LIME Examples: LIME explanations are generated for high and low sales predictions using the LimeTabularExplainer. We visualize the contributions of different features to the predictions.
-![LIME Explanation - High Sales](high_sales_lime_explanation.png)
-![LIME Explanation - Low Sales](low_sales_lime_explanation.png)
+Contributions to this project are welcome! Feel free to open issues or submit pull requests.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [MIT License](LICENSE).
+
+
+
 
