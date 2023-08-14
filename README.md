@@ -1,90 +1,82 @@
-# Prediction-of-Grocery-Sales
+# Prediction of Grocery Sales
 
-## Introduction
-
-In this project, we Used the updated tools in sklearn v1.2. We apply what we've learned to explain how our models make their predictions. The goal is to create a new version of our final project notebook, including explanations of the models, feature importances, SHAP analysis, and coefficients, as well as serializing the best models for future use.
+This project aims to predict grocery sales using machine learning techniques. It involves data preprocessing, model training, and local explanations using SHAP and LIME.
 
 ## Table of Contents
 
-1. Installation
-2. Data
-3. Data Preprocessing
-4. Linear Regression
-   - Coefficients
-   - Top 3 Most Impactful Features
-5. Random Forest Regressor
-   - Feature Importances
-   - Top 5 Most Important Features
-6. SHAP Analysis
-   - SHAP Summary Plot
-   - Interpretation of Top Features
-7. Serialization
-   - Best Models
-8. Conclusion
+- [Project Overview](#project-overview)
+- [Installation](#installation)
+- [Data](#data)
+- [Data Preprocessing](#data-preprocessing)
+- [Model Training](#model-training)
+- [Local Explanations](#local-explanations)
+- [Results](#results)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Project Overview
+
+This project focuses on predicting grocery sales using a RandomForestRegressor model. It includes data preprocessing, model training, and local explanation techniques.
+# Prediction of Grocery Sales
+
+This repository contains a project focused on predicting grocery sales using machine learning techniques. The project involves data preprocessing, model training, and model interpretation using SHAP and LIME.
+
+
+## Example Images
+
+Here are the explanation plots generated using LIME and SHAP for high and low sales examples:
+
+### High Sales LIME Explanation
+![High Sales LIME Explanation](/Project%201%5BRevisited%5D/high_sales_lime_explanation.png)
+
+### High Sales SHAP Force Plot
+![High Sales SHAP Force Plot](/Project%201%5BRevisited%5D/high_sales_shap_force_plot.png)
+
+### Low Sales LIME Explanation
+![Low Sales LIME Explanation](/Project%201%5BRevisited%5D/low_sales_lime_explanation.png)
+
+### Low Sales SHAP Force Plot
+![Low Sales SHAP Force Plot](/Project%201%5BRevisited%5D/low_sales_shap_force_plot.png)
 
 ## Installation
 
-To run the code and reproduce the results, you need to have the following libraries installed:
+1. Clone the repository:
+git clone https://github.com/yourusername/Prediction-of-Grocery-Sales.git
+cd Prediction-of-Grocery-Sales
 
-- pandas
-- matplotlib
-- scikit-learn
-- shap
+
+2. Install the required Python packages:
+pip install -r requirements.txt
+
 
 ## Data
 
-The dataset used for this project is "sales_predictions.csv." It contains information about various products in a supermarket and their corresponding outlet sales. The task is to predict the sales of products based on different features.
+The project utilizes the "sales_predictions.csv" dataset containing various features related to grocery items and their sales.
 
 ## Data Preprocessing
 
-Before building our models, we perform data preprocessing to handle inconsistencies in categorical data, drop unnecessary columns, and split the dataset into features (X) and target (y). We also create a preprocessing pipeline using ColumnTransformer to handle numerical and categorical features separately.
+The data preprocessing steps involve handling missing values, feature scaling, and one-hot encoding for categorical variables.
 
-## Linear Regression
+## Model Training
 
-### Coefficients
+A RandomForestRegressor model is trained to predict grocery sales based on the preprocessed features.
 
-We start by fitting a Linear Regression model using the preprocessed data. We then extract and visualize the coefficients determined by the model to understand the impact of each feature on the target variable.
+## Local Explanations
 
-### Top 3 Most Impactful Features
+The project employs SHAP and LIME for local explanations of model predictions. SHAP force plots and LIME explanations are generated for representative examples.
 
-From the coefficients plot, we identify the top 3 most impactful features in our Linear Regression model and interpret their coefficients in plain English.
+## Results
 
-## Random Forest Regressor
+The generated SHAP force plots and LIME explanations provide insights into how specific features contribute to the model's predictions.
 
-We also use a Tree-Based model, specifically the Random Forest Regressor, to predict supermarket sales.
+## Contributing
 
-### Feature Importances
+Contributions to this project are welcome! Feel free to open issues or submit pull requests.
 
-We fit the Random Forest Regressor using the preprocessed data and extract the feature importances to understand which features contribute the most to the model's predictions.
+## License
 
-### Top 5 Most Important Features
+This project is licensed under the [MIT License](LICENSE).
 
-From the feature importances, we identify the top 5 most important features in our Random Forest Regressor and discuss their significance.
 
-## SHAP Analysis
 
-To gain deeper insights into our models, we use SHAP analysis to understand how each feature affects individual data points' predictions. We create a SHAP summary plot to visualize the impact of each feature on the model's predictions.
 
-### Interpretation of Top Features
-
-From the SHAP summary plot, we interpret the top features that have the highest impact on the model's predictions. We explain the direction of their impact (positive or negative) and how changes in these features influence the sales predictions.
-
-## Serialization
-
-To ensure we can use our best models and SHAP analysis in future assignments or projects, we serialize and save them using the joblib library.
-
-### Best Models
-
-We serialize the following best models:
-
-- Preprocessing ColumnTransformer
-- Linear Regression Model
-- Random Forest Regressor Model
-
-The serialized models are saved in "best-models.joblib".
-
-## Conclusion
-
-In this project, we revisited the task of predicting supermarket sales and applied various machine learning models. We explored the coefficients of the Linear Regression model, the feature importances of the Random Forest Regressor, and the SHAP values to gain insights into the models' predictions. The best models and SHAP analysis are serialized for future use.
-
-For more details, please refer to the Jupyter Notebook "Project 1 - Revisited.ipynb" in this repository.
