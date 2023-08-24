@@ -1,47 +1,60 @@
-# Sales Prediction Interpretability
+# Sales Prediction Interpretability Study
 
-This repository focuses on interpreting machine learning models built for predicting sales. Using the dataset `sales_predictions.csv`, we constructed machine learning models and then proceeded to explain their predictions using techniques like SHAP and LIME.
+This repository focuses on interpreting the predictions of a sales forecasting machine learning model. By employing both SHAP and LIME, two popular model interpretability techniques, we aim to provide insights into the decision-making process of the model.
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Model Training](#model-training)
-- [Model Interpretation](#model-interpretation)
-- [Visuals](#visuals)
+- [Project Overview](#project-overview)
+- [Data Preprocessing and Cleaning](#data-preprocessing-and-cleaning)
+- [Model Development and Training](#model-development-and-training)
+- [Model Interpretability](#model-interpretability)
+- [Visual Interpretations](#visual-interpretations)
 - [How to Use](#how-to-use)
 
-## Overview
+## Project Overview
 
-Sales predictions are crucial for business strategy, and understanding the factors behind such predictions is equally significant. This project serves this very purpose by not just predicting but also interpreting the predictions.
+In today's data-driven world, while accurate predictions are important, understanding the reasoning behind those predictions is equally crucial. This project uses the `sales_predictions.csv` dataset to train a machine learning model and then employs interpretability techniques to break down the predictions.
 
-## Features
+## Data Preprocessing and Cleaning
 
-The dataset includes various features like `Item_MRP`, `Outlet_Type`, `Item_Visibility`, and more.
+**Key Steps:**
 
-## Model Training
+1. **Loading the Data:** We begin by loading the sales data.
+2. **Anomaly Handling:** Certain anomalies in the `Item_Fat_Content` are addressed.
+3. **Feature Selection:** The `Item_Identifier` and `Item_Outlet_Sales` features are dropped, keeping the rest for training.
+4. **Preprocessing Pipeline:** A comprehensive pipeline is established to handle both numerical and categorical variables. This pipeline takes care of missing values and scales or encodes features as necessary.
 
-- Linear Regression: Used for its simplicity and interpretability.
-- Random Forest Regressor: A tree-based model to capture complex patterns in the data.
+## Model Development and Training
 
-## Model Interpretation
+- **RandomForestRegressor:** This ensemble learning method is used for sales prediction due to its versatility and robustness.
+- **Train-Test Split:** Data is split into training and testing sets to ensure that the model's performance is evaluated on unseen data.
+- **Model Training:** The preprocessed training data is used to train the RandomForest model.
 
-- **SHAP (SHapley Additive exPlanations)**: Utilized to understand the impact of different features on the predictions of a single instance.
-- **LIME (Local Interpretable Model-agnostic Explanations)**: Used to locally interpret model predictions.
+## Model Interpretability
 
-## Visuals
+**Approaches Used:**
 
-### LIME Explanations:
-![LIME for Low Sales](low_sales_lime.png)
-![LIME for High Sales](high_sales_lime.png)
+- **SHAP (SHapley Additive exPlanations):** It breaks down the prediction for a single instance and provides insights into the impact of different features.
+- **LIME (Local Interpretable Model-agnostic Explanations):** This method offers a local interpretation of model predictions by approximating the model using an interpretable one.
 
-### SHAP Explanations:
-![SHAP for Low Sales](low_sales_shap.png)
-![SHAP for High Sales](high_sales_shap.png)
+## Visual Interpretations
+
+The visual results of the interpretability techniques are saved as images and can be found in the "Project 1[Revisited]" folder:
+
+### LIME Interpretations:
+- **Low Sales LIME Interpretation:** ![Low Sales LIME](Project 1[Revisited]/low_sales_lime.png)
+- **High Sales LIME Interpretation:** ![High Sales LIME](Project 1[Revisited]/high_sales_lime.png)
+
+### SHAP Interpretations:
+- **Low Sales SHAP Interpretation:** ![Low Sales SHAP](Project 1[Revisited]/low_sales_shap.png)
+- **High Sales SHAP Interpretation:** ![High Sales SHAP](Project 1[Revisited]/high_sales_shap.png)
 
 ## How to Use
 
-1. Clone the repository.
-2. Ensure you have all the required libraries installed.
-3. Run the provided code to train models and interpret them.
-4. Use the visualization images to understand the interpretability results.
+1. **Clone the Repository:** Start by cloning this repository to your local machine.
+2. **Install Necessary Libraries:** Ensure you have all required Python libraries installed. They can be found at the beginning of the notebook.
+3. **Run the Notebook:** Open the provided notebook for an in-depth, step-by-step walkthrough of every stage of this project, from data preprocessing to model interpretation.
+4. **View Visuals:** Navigate to the "Project 1[Revisited]" folder to see the visual interpretations of model predictions.
+
+Enjoy exploring the intricacies of sales prediction interpretation!
+
