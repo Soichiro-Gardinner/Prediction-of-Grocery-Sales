@@ -42,12 +42,18 @@ In today's data-driven world, while accurate predictions are important, understa
 The visual results of the interpretability techniques are saved as images and can be found in the "Project 1[Revisited]" folder:
 
 ### LIME Interpretations:
-- **Low Sales LIME Interpretation:** ![Low Sales LIME](Project 1[Revisited]/low_sales_lime.png)
-- **High Sales LIME Interpretation:** ![High Sales LIME](Project 1[Revisited]/high_sales_lime.png)
+- **Low Sales LIME Interpretation:** 
+![Low Sales LIME](Project%201[Revisited]/low_sales_lime.png)
+
+- **High Sales LIME Interpretation:** 
+![High Sales LIME](Project%201[Revisited]/high_sales_lime.png)
 
 ### SHAP Interpretations:
-- **Low Sales SHAP Interpretation:** ![Low Sales SHAP](Project 1[Revisited]/low_sales_shap.png)
-- **High Sales SHAP Interpretation:** ![High Sales SHAP](Project 1[Revisited]/high_sales_shap.png)
+- **Low Sales SHAP Interpretation:** 
+![Low Sales SHAP](Project%201[Revisited]/low_sales_shap.png)
+
+- **High Sales SHAP Interpretation:** 
+![High Sales SHAP](Project%201[Revisited]/high_sales_shap.png)
 
 ## How to Use
 
