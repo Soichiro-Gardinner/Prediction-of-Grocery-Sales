@@ -9,6 +9,7 @@ This repository focuses on interpreting the predictions of a sales forecasting m
 - [Model Development and Training](#model-development-and-training)
 - [Model Interpretability](#model-interpretability)
 - [Visual Interpretations](#visual-interpretations)
+- [Interpretation Summary](#interpretation-summary)
 - [How to Use](#how-to-use)
 
 ## Project Overview
@@ -55,6 +56,23 @@ The visual results of the interpretability techniques are saved as images and ca
 - **High Sales SHAP Interpretation:** 
 ![High Sales SHAP](Project%201[Revisited]/high_sales_shap.png)
 
+## Interpretation Summary
+
+
+### Mean Absolute SHAP Values:
+- **Outlet_Establishment_Year**: The establishment year significantly influences predictions with an impact of ~293.2.
+- **Item_MRP**: MRP is the next influential feature with an impact of ~256.96.
+- **Item_Weight & Item_Visibility**: Both influence predictions with impacts of ~47.61 and ~34.94, respectively.
+- Features like many `Item_Identifier` values have negligible influence.
+
+### SHAP Values for the 5th Instance:
+- **Item_Weight**: Decreases the prediction by ~18.42 units.
+- **Item_Visibility**: Increases the prediction by ~3.19 units.
+- **Item_MRP**: Decreases the prediction substantially by ~199.84 units.
+- **Outlet_Establishment_Year**: Reduces the prediction by ~183.8 units.
+
+Most other features have minimal influence on this instance.
+
 ## How to Use
 
 1. **Clone the Repository:** Start by cloning this repository to your local machine.
@@ -63,4 +81,5 @@ The visual results of the interpretability techniques are saved as images and ca
 4. **View Visuals:** Navigate to the "Project 1[Revisited]" folder to see the visual interpretations of model predictions.
 
 Enjoy exploring the intricacies of sales prediction interpretation!
+
 
