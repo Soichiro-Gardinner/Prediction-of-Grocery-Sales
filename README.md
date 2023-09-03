@@ -73,6 +73,42 @@ The visual results of the interpretability techniques are saved as images and ca
 
 Most other features have minimal influence on this instance.
 
+### Model
+We used the Random Forest Regressor as our machine learning model. Following training, a few inconsistencies in the dataset were addressed, and categorical features underwent one-hot encoding.
+
+### Global Interpretability with SHAP
+
+SHAP offers insights into model predictions on an average scale.
+
+1. **Summary Bar Plot:** 
+   ![SHAP Summary Bar Plot](Shap%20Summary%20plot.png)
+   This plot provides a comprehensive view of features exerting the most significant impact on model predictions. Features receive a ranking based on their importance.
+   
+2. **Dot Plot:** 
+   ![SHAP Dot Plot](shap_dotplot.png)
+   This plot presents a detailed view of SHAP values. Each dot stands for a dataset sample. Its color signifies the feature's value (high or low), while its x-axis placement indicates its influence on the model prediction.
+
+   Key Takeaways:
+   - **Outlet_Establishment_Year** and **Item_MRP** emerge as the most influential features, impacting predictions by ~293.2 and ~256.96, respectively.
+   - **Item_Weight** and **Item_Visibility** also exert a substantial influence.
+   - Many Item_Identifier values, among others, exert a negligible influence.
+
+### Local Interpretability with SHAP and LIME
+
+Local explanations zoom in on specific instances, shedding light on the model's behavior concerning those points:
+
+1. **SHAP Force Plots**: Force plots for instances with both low and high sales depict the contribution of each feature to that particular prediction.
+
+2. **LIME Explanations**: LIME provides an alternative method for local interpretability, targeting individual predictions and using locally fit surrogates for explanations.
+
+   Key Observations:
+   - For the instance with the lowest sales (index: 6950), certain features significantly drove down the sales prediction.
+   - For the instance with the highest sales (index: 1450), a different set of features influenced the prediction.
+
+### Conclusion
+
+Model interpretability is of paramount importance, particularly in business contexts like sales predictions. Tools such as SHAP and LIME demystify complex models, offering both global and local explanations. Businesses can harness these insights to refine their strategies and make more data-driven decisions.
+
 ## How to Use
 
 1. **Clone the Repository:** Start by cloning this repository to your local machine.
