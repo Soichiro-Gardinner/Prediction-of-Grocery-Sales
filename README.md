@@ -80,13 +80,14 @@ We used the Random Forest Regressor as our machine learning model. Following tra
 
 SHAP offers insights into model predictions on an average scale.
 
-1. **Summary Bar Plot:** 
-   ![SHAP Summary Bar Plot](Shap%20Summary%20plot.png)
+1. **Summary Bar Plot:**
+   ![SHAP Summary Bar Plot](Project%201%5BRevisited%5D/Shap%20Summary%20plot.png)
    This plot provides a comprehensive view of features exerting the most significant impact on model predictions. Features receive a ranking based on their importance.
-   
-2. **Dot Plot:** 
-   ![SHAP Dot Plot](shap_dotplot.png)
+
+2. **Dot Plot:**
+   ![SHAP Dot Plot](Project%201%5BRevisited%5D/shap_dotplot.png)
    This plot presents a detailed view of SHAP values. Each dot stands for a dataset sample. Its color signifies the feature's value (high or low), while its x-axis placement indicates its influence on the model prediction.
+
 
    Key Takeaways:
    - **Outlet_Establishment_Year** and **Item_MRP** emerge as the most influential features, impacting predictions by ~293.2 and ~256.96, respectively.
